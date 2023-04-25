@@ -7,12 +7,12 @@
     <nuxt-link to="/about">nuxt link</nuxt-link>
     <nuxt-link to="/home">Home</nuxt-link>
     <p>{{ $good("good") }}</p>
-    <h1>asdasdasdsa</h1>
-    <h1>asdasdasdsa</h1>
-    <h1>asdasdasdsa</h1>
+    <pre class="text-left"><code>adsa{{ good }}good</code></pre>
+    <h1>hello{{ hello }}</h1>
+    <button @click="count++">count</button>
     <!-- <p>{{ data.posts.data[0].id }}</p> -->
-    <p>Posts {{ posts.posts }}</p>
-    <p>Faqs {{ faqs }}</p>
+    <!-- <p>Posts {{ posts.posts }}</p> -->
+    Page visits: {{ good }}
   </div>
 </template>
 
@@ -35,15 +35,12 @@ const news = ref<news>({
 const url = computed(() => {
   return `https://api.safarpark.uz/api/posts`;
 });
-const { data } = await useAsyncData("posts", () =>
-  $fetch("https://api.safarpark.uz/api/posts")
-);
-const [{ data: posts }, { data: faqs }] = await Promise.all([
-  useFetch<any>(`https://api.safarpark.uz/api/posts`),
-  useFetch<any>(`https://api.safarpark.uz/api/faqs`),
-]);
+
+const count = ref(1);
+const { data: good } = await useFetch(() => `/api/test`);
+const { data: hello } = await useFetch(() => `/api/hello`);
+
 const { pending, data: post, error } = useFetch<any>(url);
-console.log(data);
 </script>
 <style>
 .rotate-enter-active,

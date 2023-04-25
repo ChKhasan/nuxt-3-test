@@ -29,9 +29,10 @@ export default defineComponent({
       count.value++;
     };
     const url = computed(() => {
-      return `https://api.safarpark.uz/api/posts/${id.value}`;
+      return `https://api.safarpark.uz/api/posts`;
     });
     const { pending, data, error } = useFetch<any>(url);
+
     // onMounted(async () => {
     //   post.value = await $axios.get(`https://api.safarpark.uz/api/posts/${id.value}`);
     //   console.log("good", post);
