@@ -19,9 +19,9 @@ const news = ref<news>({
   },
 });
 const items = ref(["a", "b", "c", "d", "e"]);
-const url = computed(() => {
-  return `https://api.safarpark.uz/api/posts`;
-});
+// const url = computed(() => {
+//   return `https://api.safarpark.uz/api/posts`;
+// });
 const onInsert = (event: any) => {
   items.value.splice(event.index, 0, event.data);
 };
@@ -29,7 +29,7 @@ const count = ref(1);
 const { data: good } = await useFetch(() => `/api/test`);
 const { data: hello } = await useFetch(() => `/api/hello`);
 
-const { pending, data: post, error } = useFetch<any>(url);
+// const { pending, data: post, error } = useFetch<any>(url);
 </script>
 <template>
   <!-- <div v-if="error || !data">
