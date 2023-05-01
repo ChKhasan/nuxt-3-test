@@ -9,11 +9,13 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@types/node": "^18",
+    "@types/node": "^18.16.0",
     "nuxt": "^3.4.1"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
-    "ant-design-vue": "^3.2.17"
+    "ant-design-vue": "^3.2.17",
+    "nuxt-swiper": "^1.1.0",
+    "vue-easy-dnd": "^2.0.4"
   }
 }
